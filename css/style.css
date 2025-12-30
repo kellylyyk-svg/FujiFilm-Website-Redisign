@@ -1,0 +1,113 @@
+@charset "UTF-8";
+@import url(font.css);
+@import url(reset.css);
+body {font-family: 'D2Coding';}
+.centerbox {max-width: 1500px; margin: 0 auto;}
+html {font-size: 10px;}
+
+:root {
+    --mainColor1:#6BB4CF;
+}
+
+
+header {position: absolute; width: 100%; padding-top: 6rem; transition: 0.5s; z-index: 10; }
+header .centerbox {display: flex; justify-content: space-between; align-items: center;}
+header h1 {}
+header h1 a {}
+header h1 a img {}
+header nav {}
+header nav .gnb {display: flex; transition: 0.3s;}
+header nav .gnb > li {font-size: 2.5rem; position: relative }
+header nav .gnb > li > a {padding: 1.04vh 2.08vw; color: #fff; display: block;}
+header nav .gnb .lnb {position: absolute; width: 100%; background: rgba(0, 0, 0, 0.5); height: 0; text-align: center; top: 110%; padding: 1.56vh 0; z-index: 1; overflow: hidden; opacity: 0; visibility: hidden;}
+header nav .gnb .lnb li {font-size: 1.6rem;}
+header nav .gnb .lnb li a {color: #fff; display: block; padding: 0.78vw;}
+
+header nav .gnb:hover .lnb {height: 36vh; opacity: 1; visibility: visible;}
+header nav .gnb .lnb li, header nav .gnb li:hover > a {color:var(--mainColor1)}
+
+
+
+
+header .iconbox {display: flex;}
+header .iconbox a {padding: 0.78vw;}
+header .iconbox a img {width: 100%;}
+
+header:hover {background: #AC5626;}
+
+.hero {width: 100%; height: 100vh;}
+.hero video {width: 100%; height: 100%; object-fit: cover;}
+.hero .section_nav {position: absolute;  z-index: 8; top: 40%; right: 10%; transform: translate(0, -50%); display: flex; gap: 15px; flex-direction: column;}
+
+
+
+
+section h3 {font-size: 35px; text-align: center; background: url(../images/title_element.png); background-repeat: no-repeat; }
+
+.section1 h3 {padding: 140px 0 60px 0; background-position: 770px 120px; box-sizing: border-box;}
+.section1 {position: relative;}
+.section1 .arrowbox {width: 100%; position: absolute; top: 60%;}
+.section1 .arrowbox .prev {position: absolute; left: 0; margin-left: 135px;}
+.section1 .arrowbox .next {position: absolute; right: 0; margin-right: 135px;}
+.section1 .centerbox {display: flex; }
+.section1 .centerbox .list li {display: flex; gap: 30px;}
+.section1 .centerbox .list li figure {height: 597px; width: 735px;}
+.section1 .centerbox .list li figure img {height: 100%; object-fit: cover;}
+.section1 .list .textbox {display: grid; grid-template-columns: 1fr 1fr; width: 735px; gap: 27px; padding: 30px 0; border-top: 1px solid #000; border-bottom: 1px solid #000;}
+.section1 .list .textbox .info {display: flex; justify-content: space-between; font-family: 'Noto Sans'; font-size: 18px;}
+.section1 .list .textbox .info p {}
+.section1 .list .textbox .info span {color: #726F6F;}
+.section1 .list .ctabox {display: flex; gap: 30px; margin-top: 30px;}
+.section1 .list .ctabox .cta {font-family: 'Noto Sans';}
+.section1 .list .ctabox .cta figure {width: 352px; height: 255px;}
+.section1 .list .ctabox .cta figure img {width: 100%; object-fit: cover;}
+.section1 .list .ctabox .cta p {font-size: 20px; padding: 30px 0 16px 0;}
+.section1 .list .ctabox .cta span {font-size: 16px; color: #726F6F;}
+
+
+
+
+
+
+
+
+@media screen and (max-width:1100px) {
+    html {font-size: 9px;}
+    header {padding-top: 3rem;}
+    header h1 {margin-left: 20px;}
+    header .gnb {white-space: nowrap;}
+    header .iconbox {margin-right: 20px;}
+}
+
+@media screen and (max-width:780px) {
+    html {font-size: 8px; overflow-x: hidden;}
+
+    header .hamburger {position: absolute; left: 20px; top: 15px; width: 40px; height: 40px; cursor: pointer;}
+    header .hamburger span {position: absolute; width: 25px; height: 3px; background: #fff; left: 50%; top: 50%; transform: translate(-50%,-50%); transition: 0.3s;}
+    header .hamburger span::before,
+    header .hamburger span::after {content: ''; position: absolute; width: 100%; height: 100%; background: #fff; left: 0;}
+    header .hamburger span::before {top: -8px;}
+    header .hamburger span::after {top: 8px;}
+
+    header .hamburger.on span {background: rgba(255,255,255,0);}
+    header .hamburger.on span::before {transform: rotate(45deg); top: 50%;}
+    header .hamburger.on span::after {transform: rotate(135deg); top: 50%;}
+
+
+
+    header {padding: 3rem 1.5rem; background: #AC5626;}
+    header .centerbox { display: flex; flex-direction: column;}
+    header nav .gnb {position: fixed; flex-direction: column; left: -100%; top: -100%; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 5; transform: rotate(-90deg); transition: 1s;}
+    header nav .gnb.on {left: 0; top: 75px; transform: rotate(0deg);}
+    header nav .gnb li {}
+    header nav .gnb li a {padding: 3vh 40vw; text-align: center;}
+    header h1 {margin-right: 50px;}
+    header .centerbox {}
+    header .iconbox {position: absolute; top: 15px; right: 20px;}
+    .hero {}
+    .hero video {width: 100%; object-fit: cover;}
+    .hero .section_nav {display: none;}
+    header nav .gnb .lnb {position: relative; width: 100%; right: auto; top: auto; background: rgba(255,255,255,0.7); height: 0; overflow: hidden; transition: 0.5s; opacity: 0; visibility: hidden;}
+    header nav .gnb .lnb li a {color: #000000; display: block; padding: 1.2vw;}
+    header nav .gnb li.on .lnb {height: auto; padding: 10px 0; opacity: 1; visibility: visible;}
+}
