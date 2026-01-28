@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url(font.css);
 @import url(reset.css);
-body {font-family: 'D2Coding';}
+body {font-family: 'D2Coding'; background: url(../images/bg.png);}
 .centerbox {max-width: 1500px; margin: 0 auto;}
 html {font-size: 10px;}
 
@@ -38,22 +38,22 @@ header:hover {background: #AC5626;}
 .hero {width: 100%; height: 100vh;}
 .hero video {width: 100%; height: 100%; object-fit: cover;}
 .hero .section_nav {position: absolute;  z-index: 8; top: 40%; right: 10%; transform: translate(0, -50%); display: flex; gap: 15px; flex-direction: column;}
-
-
+.hero .section_nav li img {display: block; width: 100%; transition: transform 0.6s ease-in-out; }
+.hero .section_nav li:hover img {transform: rotate(360deg);}
 
 
 section h3 {font-size: 35px; text-align: center; background: url(../images/title_element.png); background-repeat: no-repeat; }
 
 .section1 h3 {padding: 140px 0 60px 0; background-position: 770px 120px; box-sizing: border-box;}
-.section1 {position: relative;}
+.section1 {position: relative; margin-bottom: 180px;}
 .section1 .arrowbox {width: 100%; position: absolute; top: 60%;}
 .section1 .arrowbox .prev {position: absolute; left: 0; margin-left: 135px;}
 .section1 .arrowbox .next {position: absolute; right: 0; margin-right: 135px;}
 .section1 .centerbox {display: flex; }
 .section1 .centerbox .list li {display: flex; gap: 30px;}
-.section1 .centerbox .list li figure {height: 597px; width: 735px;}
-.section1 .centerbox .list li figure img {height: 100%; object-fit: cover;}
-.section1 .list .textbox {display: grid; grid-template-columns: 1fr 1fr; width: 735px; gap: 27px; padding: 30px 0; border-top: 1px solid #000; border-bottom: 1px solid #000;}
+.section1 .centerbox .list li figure {max-width: 100%; height: auto;}
+.section1 .centerbox .list li figure img { object-fit: cover;}
+.section1 .list .textbox {display: grid; grid-template-columns: 1fr 1fr; width: 100%; gap: 27px; padding: 30px 0; border-top: 1px solid #000; border-bottom: 1px solid #000;}
 .section1 .list .textbox .info {display: flex; justify-content: space-between; font-family: 'Noto Sans'; font-size: 18px;}
 .section1 .list .textbox .info p {}
 .section1 .list .textbox .info span {color: #726F6F;}
@@ -65,7 +65,72 @@ section h3 {font-size: 35px; text-align: center; background: url(../images/title
 .section1 .list .ctabox .cta span {font-size: 16px; color: #726F6F;}
 
 
+.section2 .element {position: absolute; left: 170px; top: 200%; z-index: 1;}
+.section2 {display: flex; flex-direction: column; background: #AC5626; padding-top: 60px; padding-bottom: 30px; }
+.section2 .topset {display: flex; justify-content: space-between; align-items: center;}
+.section2 .topset .section2_textbox {display: flex; flex-direction: column; align-items: start; margin-left: 210px; background: #bb886d67; border: 2px solid #ffffff41; border-radius: 5px;  padding: 50px; white-space: nowrap; position: relative; z-index: 10; margin-right: 30px;}
+.section2 .topset .section2_textbox h3 {color: #fff; font-size: 80px; text-align: left; margin-bottom: 68px; background: none;}
+.section2 .topset .section2_textbox p {color: #fff; font-size: 25px; letter-spacing: -2%; font-family: 'Noto Sans'; font-weight: 300; margin-bottom: 30px;}
+.section2 .topset .section2_textbox a {border: 1px solid #fff; border-radius: 50%; color: #fff; font-size: 20px; padding: 13px 22px;}
 
+.section2 .category_window {overflow: hidden; z-index: 9;}
+.section2 .category {display: flex; gap: 30px; width: max-content; transition: 0.5s;}
+.section2 .topset .category li.fade-out {opacity: 0; transform: translateX(-100px); transition: 0.5s;}
+
+.section2 .topset .category li.active {opacity: 1;}
+.section2 .topset .category li.prev,
+.section2 .topset .category li.next {opacity: 0;}
+.section2 .topset .category li a {display: block; width: 100%; height: 100%; position: relative;}
+.section2 .topset .category li a figure {width: 100%; height: 100%;}
+.section2 .topset .category li a figure img {height: 100%;}
+.section2 .topset .category li a .text {position: absolute; bottom: 0; margin-left: 30px; margin-bottom: 30px;}
+.section2 .topset .category li a .text span {color: #737373; font-size: 20px;}
+.section2 .topset .category li a .text p {font-size: 50px;}
+
+.section2 .movebar { display: flex; align-items: center; gap: 30px; padding-top: 54px;}
+.section2 .movebar .arrow_btn {display: flex; margin-left: 720px; gap: 9px;}
+.section2 .movebar .arrow_btn .prev_btn {}
+.section2 .movebar .arrow_btn .next_btn {}
+.section2 .movebar .slidebar {width: 839px; height: 10px; background: #fff; border-radius: 5px; position: relative;}
+.section2 .movebar .slidebar::before {content: ''; position: absolute; width: 195px; height: 10px; background: #6BB4CF; border-radius: 5px; left: 0;}
+
+
+.section3 h3 {padding: 180px 0 60px 0; background-position: 555px 158px;}
+.section3 .noticebox {}
+.section3 .noticebox li {padding: 30px 0; border-bottom: 1px solid #C3BCAF;}
+.section3 .noticebox li:last-child {border-bottom: none;}
+.section3 .noticebox li a {display: flex; gap: 50px; align-items: center;}
+.section3 .noticebox li a .nb {font-size: 80px; color: #4d4a47;}
+.section3 .noticebox li a .notice_container {display: flex; gap: 60px;}
+.section3 .noticebox li a .notice_container figure {}
+.section3 .noticebox li a .notice_container .textwrap {font-family: 'Noto Sans';}
+.section3 .noticebox li a .notice_container .textwrap span {font-size: 20px; color: #414141;}
+.section3 .noticebox li a .notice_container .textwrap h4 {font-size: 35px; margin: 15px 0 23px 0;}
+.section3 .noticebox li a .notice_container .textwrap p {font-size: 18px; color: #414141;}
+
+
+
+
+footer {background: #AC5626; padding: 60px 0;}
+footer .centerbox {display: flex; align-items: center;}
+footer .centerbox h1 {margin-right: 120px;}
+footer .centerbox h1 img {}
+footer .centerbox .infobox {color: #E2E2E2; display: flex; flex-direction: column; gap: 30px;}
+footer .centerbox .infobox .tag {font-size: 18px; display: flex; }
+footer .centerbox .infobox .tag a {color: #E2E2E2; padding: 0 15px; border-right: 1px solid #e2e2e2;}
+footer .centerbox .infobox .tag a:nth-child(1) {padding-left: 0;}
+footer .centerbox .infobox .tag a:last-child {border-right: none;}
+footer .centerbox .infobox .tag a.on {font-weight: 700;}
+
+footer .centerbox .infobox .info {margin-right: 164px; font-size: 18px; font-family: 'Noto Sans'; display: flex; flex-direction: column; gap: 15px;}
+footer .centerbox .infobox .info p {}
+footer .centerbox .infobox .info p {}
+
+footer .centerbox .infobox .ltd {font-size: 18px; font-family: 'Noto Sans';}
+
+footer .centerbox .callbox {color: #fff;}
+footer .centerbox .callbox p {font-size: 40px;}
+footer .centerbox .callbox span {color: #E2E2E2; font-size: 18px; font-family: 'Noto Sans'; text-align: right;}
 
 
 
@@ -81,6 +146,7 @@ section h3 {font-size: 35px; text-align: center; background: url(../images/title
 
 @media screen and (max-width:780px) {
     html {font-size: 8px; overflow-x: hidden;}
+    .centerbox {padding: 0 18px;}
 
     header .hamburger {position: absolute; left: 20px; top: 15px; width: 40px; height: 40px; cursor: pointer;}
     header .hamburger span {position: absolute; width: 25px; height: 3px; background: #fff; left: 50%; top: 50%; transform: translate(-50%,-50%); transition: 0.3s;}
@@ -97,10 +163,10 @@ section h3 {font-size: 35px; text-align: center; background: url(../images/title
 
     header {padding: 3rem 1.5rem; background: #AC5626;}
     header .centerbox { display: flex; flex-direction: column;}
-    header nav .gnb {position: fixed; flex-direction: column; left: -100%; top: -100%; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 5; transform: rotate(-90deg); transition: 1s;}
-    header nav .gnb.on {left: 0; top: 75px; transform: rotate(0deg);}
+    header nav .gnb {position: fixed; flex-direction: column; left: -100%; width: 100%; top: 75px; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 5; transition: 1s; }
+    header nav .gnb.on {left: 0; top: 75px;}
     header nav .gnb li {}
-    header nav .gnb li a {padding: 3vh 40vw; text-align: center;}
+    header nav .gnb li a {padding: 3vh 40vw; text-align: center; }
     header h1 {margin-right: 50px;}
     header .centerbox {}
     header .iconbox {position: absolute; top: 15px; right: 20px;}
@@ -108,6 +174,19 @@ section h3 {font-size: 35px; text-align: center; background: url(../images/title
     .hero video {width: 100%; object-fit: cover;}
     .hero .section_nav {display: none;}
     header nav .gnb .lnb {position: relative; width: 100%; right: auto; top: auto; background: rgba(255,255,255,0.7); height: 0; overflow: hidden; transition: 0.5s; opacity: 0; visibility: hidden;}
-    header nav .gnb .lnb li a {color: #000000; display: block; padding: 1.2vw;}
-    header nav .gnb li.on .lnb {height: auto; padding: 10px 0; opacity: 1; visibility: visible;}
+    header nav .gnb .lnb li a {color: #000000; display: block; padding: 3vw;}
+    header nav .gnb li.on .lnb {height: auto; padding: 10px 0; opacity: 1; visibility: visible; position: relative;}
+    header nav .gnb:hover .lnb {height: 0;opacity: 0; visibility: hidden;}
+
+    .section1 h3 {background-position: 73px 120px; box-sizing: border-box; font-size: 30px;}
+
+    .section1 .arrowbox {width: 100%; position: absolute; top: 130px;}
+.section1 .arrowbox .prev {position: absolute; left: -130px;}
+.section1 .arrowbox .next {position: absolute; right: -130px;}
+.section1 .centerbox {display: flex; }
+.section1 .centerbox .list li {display: flex; gap: 30px;}
+.section1 .centerbox .list li figure {position: relative;}
+.section1 .centerbox .list li figure img {height: 100%; object-fit: cover;}
+.section1 .list .textbox {position: absolute; left: 0; grid-template-columns: 1fr; gap: 10px; padding: 30px 18px;}
+.section1 .list .textbox .info {display: flex; justify-content: space-between; font-family: 'Noto Sans'; font-size: 18px;}
 }
